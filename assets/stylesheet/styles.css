@@ -1,0 +1,22 @@
+*
+{
+    padding:0;
+    margin:0;
+}
+
+canvas
+{
+    position: relative;
+    
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    max-width: 100vw;
+    max-height:100vh;
+    z-index: 0;
+
+    background-color: aqua;
+}

@@ -1,0 +1,2 @@
+<b>A Bubble Dating Simulator</b>: Where you are transported into a world of sentient bubbles and your goals is to come out of your bubble and try not to pop theirs, while trying to win over the hearts of these sentient bubbles! <br>
+Who will you date? The clean soap bubble? Or maybe the grimey oil bubble? Or even the hotheaded lava bubble?

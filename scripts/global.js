@@ -23,6 +23,8 @@ let mapIMG = new Image();
 mapIMG.src = "assets/art/menu/map.png";
 let mapIconIMG = new Image();
 mapIconIMG.src = "assets/art/menu/mapIcon.png";
+let backgroundIMG = new Image ();
+backgroundIMG.src = "assets/art/locations/background1.png";
 
 //mouse position coords, needed to open and close map, and then click to locations
 let MouseX = 0;
@@ -30,6 +32,8 @@ let MouseY = 0;
 //map check! it helps open and close it, also select locations when the map IS open
 // 0 for close, 1 for open (I DONT DO BOOLEONS OKAY?)
 let mapOpen = 0;
+//this is for changing locations, as player moves this value changes dont worry about it :P
+let background = 1;
 
 
 
@@ -43,9 +47,9 @@ function openMap()
 {
     if (MouseX >= 1800 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 0)
     {
-        ctx.drawImage(mapIMG,400,150,1200,600);
         mapOpen = 1;
         MouseX = 0;
+        console.log("map opened");
     }
 }
 //function for closing the map
@@ -54,23 +58,25 @@ function closeMap()
 {
     if (MouseX >= 1800 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 1)
     {
-        ctx.clearRect(400,150,1200,600);
         mapOpen = 0;
         MouseX = 0;
+        console.log("map closed");
     }
 }
 
 
-
-
-
-////------------------ MOUSE FUNCTIONS
+// MOUSE FUNCTION
+//it gets mouse position necessary for opening map, changing location etc.
 function getMousePosition(event)
 {
     MouseX = event.clientX;
     MouseY = event.clientY;
-    console.log(MouseX);
+    console.log(MouseX,MouseY);
 }
+
+
+
+
 
 
 
@@ -81,7 +87,12 @@ function getMousePosition(event)
 //draws any nessecary sprites, or whatever
 function draw()
 {
-    //console.log("I AM DRAWING");
+    ctx.drawImage(backgroundIMG,0,0,1920, 1080);
+    //draws the map ON TOP when it should be draw, refer to the functions openMap, closeMap
+    if (mapOpen == 1)
+    {
+        ctx.drawImage(mapIMG,400,150,1200,600);
+    }
 }
 
 //calls and updates all functions in the game
@@ -89,6 +100,7 @@ function update()
 {
     UITextBox();
     UIMenuBox();
+    changeLocation();
     openMap();
     closeMap();
     //console.log("I AM UPDATING");

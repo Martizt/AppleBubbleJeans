@@ -4,6 +4,11 @@
     margin:0;
 }
 
+html
+{
+    background-color: rgb(4, 40, 61);
+}
+
 canvas
 {
     position: relative;
@@ -18,5 +23,5 @@ canvas
     max-height:100vh;
     z-index: 0;
 
-    background-color: aqua;
+    background-color: rgb(71, 248, 248);
 }

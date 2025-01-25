@@ -5,9 +5,11 @@ function displayBubble()
 {
     switch(background)
     {
-        case 1:
+        case 0:
             bubbleIMG.src = "assets/art/bubbles/bubble1.png";
-            
+        break;
+        case 1:
+            bubbleIMG.src = "assets/art/bubbles/bubble2.png";
         break;
     }
 }

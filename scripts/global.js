@@ -23,8 +23,13 @@ let mapIMG = new Image();
 mapIMG.src = "assets/art/menu/map.png";
 let mapIconIMG = new Image();
 mapIconIMG.src = "assets/art/menu/mapIcon.png";
+let textBoxIMG = new Image();
+textBoxIMG.src = "assets/art/menu/textBox.png";
+
 let backgroundIMG = new Image ();
 backgroundIMG.src = "assets/art/locations/background1.png";
+let bubbleIMG = new Image ();
+bubbleIMG.src = "assets/art/bubbles/bubble1.png";
 
 //mouse position coords, needed to open and close map, and then click to locations
 let MouseX = 0;
@@ -34,6 +39,9 @@ let MouseY = 0;
 let mapOpen = 0;
 //this is for changing locations, as player moves this value changes dont worry about it :P
 let background = 1;
+
+let dialogue = 1;
+let dialogueText = " ";
 
 
 
@@ -88,6 +96,7 @@ function getMousePosition(event)
 function draw()
 {
     ctx.drawImage(backgroundIMG,0,0,1920, 1080);
+
     //draws the map ON TOP when it should be draw, refer to the functions openMap, closeMap
     if (mapOpen == 1)
     {
@@ -103,7 +112,7 @@ function update()
     changeLocation();
     openMap();
     closeMap();
-    //console.log("I AM UPDATING");
+    dialogueBubble1();
 }
 
 //should be called LAST

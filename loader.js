@@ -12,6 +12,16 @@ $.getScript( "scripts/dialogue.js" )
         $( "div.log" ).text( "Triggered ajaxError handler." );
 });
 
+$.getScript( "scripts/scene.js" )
+    .done(function( script, textStatus ) 
+    {
+        console.log( textStatus );
+    })
+    .fail(function( jqxhr, settings, exception ) 
+    {
+        $( "div.log" ).text( "Triggered ajaxError handler." );
+});
+
 $.getScript( "scripts/global.js" )
     .done(function( script, textStatus ) 
     {

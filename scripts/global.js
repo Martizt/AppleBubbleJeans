@@ -19,6 +19,8 @@ const ctx = canvas.getContext("2d");
 canvas.addEventListener("click", getMousePosition);
 
 //image variables so a lot
+let titleScreenIMG = new Image();
+titleScreenIMG.src = "assets/art/menu/titlescreen.png";
 let mapIMG = new Image();
 mapIMG.src = "assets/art/menu/map.png";
 let bubbleMeter = new Image();
@@ -42,18 +44,36 @@ let mapOpen = 0;
 //this is for changing locations, as player moves this value changes dont worry about it :P
 let background = 0;
 
+//all the dialogue variables
 let dialogue = 0;
 let dialogueText = bubbleEntryDialogue[0][0];
 let responseNPCText = bubbleResponseDialogue[0][0][0];
 let response1Text = playerDialgoue[0][0][0];
 let response2Text = playerDialgoue[0][1][0];
 let response3Text = playerDialgoue[0][2][0];
+let finisherText = " ";
 let buttonPressed = -1;
 
+
+//all the affection based variables
+let bubble1affection = 5;
+let bubble2affection = 5;
+let bubble3affection = 5;
+let bubble4affection = 5;
+let bubble5affection = 5;
 let affection = 5;
 
+//variables for keeping track of who you talked to and how much
+let bubble1talk = 0;
+let bubble2talk = 0;
+let bubble3talk = 0;
+let bubble4talk = 0;
+let bubble5talk = 0;
+
+//keeps track of if you are responding or they are.
 let conversationStatus = 0;
 
+let scene = 0;
 
 ////----------------- MAP FUNCTIONS
 //function for opening the map
@@ -89,10 +109,32 @@ function answerBox1()
         MouseX = 0;
         buttonPressed = 0;
         console.log("button 1 clicked");
-        dialogue++;
-        affection += -1;
         conversationStatus = 1;
-        textChange();
+        if (background == 0)
+        {
+            bubble1talk++;
+            bubble2affection--;
+        }
+        if (background == 1)
+        {
+            bubble2talk++;
+            bubble2affection--;
+        }
+        if (background == 2)
+        {
+            bubble3talk++;
+            bubble3affection--;
+        }
+        if (background == 3)
+        {
+            bubble4talk++;
+            bubble4affection--;
+        }
+        if (background == 4)
+        {
+            bubble5talk++;
+            bubble5affection--;
+        }
     }
 }
 function answerBox2()
@@ -102,10 +144,32 @@ function answerBox2()
             MouseX = 0;
             buttonPressed = 1;
             console.log("button 2 clicked");
-            dialogue++;
-            affection += 0.5;
             conversationStatus = 1;
-            textChange();
+            if (background == 0)
+            {
+                bubble1talk++;
+                bubble1affection = bubble1affection + 0.5;
+            }
+            if (background == 1)
+            {
+                bubble2talk++;
+                bubble2affection = bubble2affection + 0.5;
+            }
+            if (background == 2)
+            {
+                bubble3talk++;
+                bubble3affection = bubble3affection + 0.5;
+            }
+            if (background == 3)
+            {
+                bubble4talk++;
+                bubble4affection = bubble4affection + 0.5;
+            }
+            if (background == 4)
+            {
+                bubble5talk++;
+                bubble5affection = bubble5affection + 0.5;
+            }
         }
 }
 function answerBox3()
@@ -115,10 +179,32 @@ function answerBox3()
             MouseX = 0;
             buttonPressed = 2;
             console.log("button 3 clicked");
-            dialogue++;
-            affection += 1;
             conversationStatus = 1;
-            textChange();
+            if (background == 0)
+            {
+                bubble1talk++;
+                bubble1affection++;
+            }
+            if (background == 1)
+            {
+                bubble2talk++;
+                bubble2affection++;
+            }
+            if (background == 2)
+            {
+                bubble3talk++;
+                bubble3affection++;
+            }
+            if (background == 3)
+            {
+                bubble4talk++;
+                bubble4affection++;
+            }
+            if (background == 4)
+            {
+                bubble5talk++;
+                bubble5affection++;
+            }
         }
 }
 
@@ -162,15 +248,23 @@ function draw()
 //calls and updates all functions in the game
 function update()
 {
-    UITextBox();
-    UIMenuBox();
-    changeLocation();
-    displayBubble();
-    openMap();
-    closeMap();
-    answerBox1();
-    answerBox2();
-    answerBox3();
+    if (scene == 0)
+    {
+        introMoment();
+    }
+    if (scene == 1)
+    {
+        UITextBox();
+        UIMenuBox();
+        changeLocation();
+        displayBubble();
+        openMap();
+        closeMap();
+        answerBox1();
+        answerBox2();
+        answerBox3();
+        finishText();
+    }
 }
 
 //should be called LAST

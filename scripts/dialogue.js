@@ -341,18 +341,37 @@ let bubbleResponseDialogue =[
 
 function textChange()
 {
-    /*if(conversationStatus == 0)
+    if (dialogue<=4)
     {
-        dialogueText = bubbleEntryDialogue[background][dialogue];
-        conversationStatus = 1;
+        response1Text = playerDialgoue[background][0][dialogue];
+        response2Text = playerDialgoue[background][1][dialogue];
+        response3Text = playerDialgoue[background][2][dialogue];
     }
-    else
-    {
-        dialogueText = bubbleResponseDialogue[background][buttonPressed][dialogue];
-        conversationStatus = 0;
-    }
-    */
-    response1Text = playerDialgoue[background][0][dialogue];
-    response2Text = playerDialgoue[background][1][dialogue];
-    response3Text = playerDialgoue[background][2][dialogue];
+}
+
+function finishText()
+{
+    if(dialogue >= 5)
+        {
+            if (background == 0)
+            {
+                finisherText = "Oh hunny I cannot talk more to you now!"
+            }
+            if (background == 1)
+            {
+                finisherText = "Can't talk fuck booooy"
+            }
+            if (background == 2)
+            {
+                finisherText = "I'm gonna go take a nap now, bye bye~"
+            }
+            if (background == 3)
+            {
+                finisherText = "I am now going to take away people's rights, leave me alone."
+            }
+            if (background == 4)
+            {
+                finisherText = "Gotta write another song, see ya around"
+            }
+        }
 }

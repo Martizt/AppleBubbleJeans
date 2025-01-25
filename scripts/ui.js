@@ -25,6 +25,8 @@ function UITextBox()
       ctx.fillText(response2Text, 690, 1000, 540);
       ctx.fillText(response3Text, 1290, 1000, 540);
 
+      if (dialogue <= 4)
+      {
       if (conversationStatus == 1)
         {
           responseNPCText = bubbleResponseDialogue[background][buttonPressed][dialogue];
@@ -34,7 +36,15 @@ function UITextBox()
 
           ctx.fillText(responseNPCText, 70, 800, 1790);
         }
-        
+      }
+      else
+      {
+          ctx.drawImage(textBoxIMG, 60, 750, 1800, 300);
+          ctx.font = "40px Arial";
+          ctx.fillStyle = "black";
+
+          ctx.fillText(finisherText, 70, 800, 1790);
+      }
     }
 }
 

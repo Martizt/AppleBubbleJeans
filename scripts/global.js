@@ -38,11 +38,14 @@ let MouseY = 0;
 // 0 for close, 1 for open (I DONT DO BOOLEONS OKAY?)
 let mapOpen = 0;
 //this is for changing locations, as player moves this value changes dont worry about it :P
-let background = 1;
+let background = 0;
 
-let dialogue = 1;
+let dialogue = 0;
 let dialogueText = " ";
-
+let response1Text = "Response 1";
+let response2Text = "Response 2";
+let response3Text = "Response 3";
+let buttonPressed = -1;
 
 
 
@@ -71,6 +74,36 @@ function closeMap()
         console.log("map closed");
     }
 }
+//ctx.drawImage(textBoxIMG, 80, 950, 550, 100);
+//ctx.drawImage(textBoxIMG, 680, 950, 550, 100);
+//ctx.drawImage(textBoxIMG, 1280, 950, 550, 100);
+function answerBox1()
+{
+    if (MouseX >= 80 && MouseX <= 630 && MouseY >= 950 && MouseY <= 1050)
+    {
+        MouseX = 0;
+        buttonPressed = 0;
+        console.log("button 1 clicked");
+    }
+}
+function answerBox2()
+{
+    if (MouseX >= 680 && MouseX <= 1230 && MouseY >= 950 && MouseY <= 1050)
+        {
+            MouseX = 0;
+            buttonPressed = 1;
+            console.log("button 2 clicked");
+        }
+}
+function answerBox3()
+{
+    if (MouseX >= 1280 && MouseX <= 1830 && MouseY >= 950 && MouseY <= 1050)
+        {
+            MouseX = 0;
+            buttonPressed = 2;
+            console.log("button 3 clicked");
+        }
+}
 
 
 // MOUSE FUNCTION
@@ -96,6 +129,7 @@ function getMousePosition(event)
 function draw()
 {
     ctx.drawImage(backgroundIMG,0,0,1920, 1080);
+    ctx.drawImage(bubbleIMG, 0, 0, 500,500);
 
     //draws the map ON TOP when it should be draw, refer to the functions openMap, closeMap
     if (mapOpen == 1)
@@ -110,9 +144,13 @@ function update()
     UITextBox();
     UIMenuBox();
     changeLocation();
+    displayBubble();
     openMap();
     closeMap();
     dialogueBubble1();
+    answerBox1();
+    answerBox2();
+    answerBox3();
 }
 
 //should be called LAST

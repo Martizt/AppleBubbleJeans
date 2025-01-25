@@ -13,14 +13,14 @@ function changeLocation()
         {
             switch(background)
             {
-                case 1:
+                case 0:
                     backgroundIMG.src = "assets/art/locations/background2.png";
-                    background = 2;
+                    background = 1;
                     mapOpen = 0;
                 break;
-                case 2: 
+                case 1: 
                     backgroundIMG.src = "assets/art/locations/background1.png";
-                    background = 1;
+                    background = 0;
                     mapOpen = 0;
                 break;
             }

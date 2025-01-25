@@ -24,20 +24,6 @@ function dialogueBubble1()
   }
 }
 
-function testingDialogue()
-{
-    dialogueText = bubbleEntryDialogue[background][dialogue];
-}
-
-
-function loadDialogue()
-{
-
-    switch( background)
-    {
-
-    }
-}
 
 
 
@@ -71,13 +57,6 @@ let  bubbleEntryDialogue = [
          "", ""
     ]
 ]
-
-
-function getEntryDiaglogue()
-{
-    //console.log( bubbleEntryDialogue[background][dialogue]);
-    return bubbleEntryDialogue[background][dialogue];
-}
 
 
 
@@ -286,3 +265,21 @@ let playerDialgoue =
 ]
 
 
+
+function textChange()
+{
+    if( conversationStatus == 0)
+    {
+        dialogueText = bubbleEntryDialogue[background][dialogue];
+        conversationStatus++;
+    }
+    else
+    {
+        dialogueText = bubbleResponseDialogue[background][dialogue][buttonPressed];
+        conversationStatus = 0;
+    }
+
+    response1Text = playerDialgoue[background][0][dialogue];
+    response2Text = playerDialgoue[background][1][dialogue];
+    response3Text = playerDialgoue[background][2][dialogue];
+}

@@ -47,8 +47,7 @@ let response2Text = "Response 2";
 let response3Text = "Response 3";
 let buttonPressed = -1;
 
-
-
+let conversationStatus = 0;
 
 
 ////----------------- MAP FUNCTIONS
@@ -61,6 +60,7 @@ function openMap()
         mapOpen = 1;
         MouseX = 0;
         console.log("map opened");
+        
     }
 }
 //function for closing the map
@@ -84,6 +84,8 @@ function answerBox1()
         MouseX = 0;
         buttonPressed = 0;
         console.log("button 1 clicked");
+        dialogue++;
+        textChange();
     }
 }
 function answerBox2()
@@ -93,6 +95,8 @@ function answerBox2()
             MouseX = 0;
             buttonPressed = 1;
             console.log("button 2 clicked");
+            dialogue++;
+            textChange();
         }
 }
 function answerBox3()
@@ -102,6 +106,9 @@ function answerBox3()
             MouseX = 0;
             buttonPressed = 2;
             console.log("button 3 clicked");
+            dialogue++;
+            current
+            textChange();
         }
 }
 
@@ -147,9 +154,8 @@ function update()
     displayBubble();
     openMap();
     closeMap();
-    testingDialogue();
+    ///testingDialogue();
     dialogueBubble1();
-    getEntryDiaglogue();
     answerBox1();
     answerBox2();
     answerBox3();

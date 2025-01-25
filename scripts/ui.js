@@ -6,7 +6,9 @@ console.log("UI.js script loaded");
 function UITextBox() 
 {
     if (canvas.getContext) {
-      ctx.fillRect(60, 800, 1800, 250);
+      ctx.drawImage(textBoxIMG, 60, 800, 1800, 250);
+      ctx.font = "50px Arial";
+      ctx.fillText(dialogueText, 70, 850);
     }
 }
 
@@ -17,3 +19,4 @@ function UIMenuBox()
       ctx.drawImage(mapIconIMG, 1800, 25, 100, 100);
     }
 }
+

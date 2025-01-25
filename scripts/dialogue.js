@@ -355,23 +355,23 @@ function finishText()
         {
             if (background == 0)
             {
-                finisherText = "Oh hunny I cannot talk more to you now!"
+                finisherText = "Oh, I’d love to chat, but I’m bubbling over with things to do! Catch me later, okay? I’ll be floating around!";
             }
             if (background == 1)
             {
-                finisherText = "Can't talk fuck booooy"
+                finisherText = "Hey, sorry, now’s not a good time. I’ve got to, uh… handle some bubble business. Talk soon though!";
             }
             if (background == 2)
             {
-                finisherText = "I'm gonna go take a nap now, bye bye~"
+                finisherText = "Oh dear, I’m so sorry! I’m completely swamped right now. But don’t worry—I’ll make time for you later!";
             }
             if (background == 3)
             {
-                finisherText = "I am now going to take away people's rights, leave me alone."
+                finisherText = "Listen, I’m a busy bubble, alright? I can’t talk right now. Important stuff going on. Real important.";
             }
             if (background == 4)
             {
-                finisherText = "Gotta write another song, see ya around"
+                finisherText = "Ah, I’d love to chat, but I’ve got a big performance to rehearse for. Rain check? Promise I’ll make it worth your while!";
             }
         }
 }

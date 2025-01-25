@@ -341,7 +341,7 @@ let bubbleResponseDialogue =[
 
 function textChange()
 {
-    if(conversationStatus == 0)
+    /*if(conversationStatus == 0)
     {
         dialogueText = bubbleEntryDialogue[background][dialogue];
         conversationStatus = 1;
@@ -351,7 +351,7 @@ function textChange()
         dialogueText = bubbleResponseDialogue[background][buttonPressed][dialogue];
         conversationStatus = 0;
     }
-
+    */
     response1Text = playerDialgoue[background][0][dialogue];
     response2Text = playerDialgoue[background][1][dialogue];
     response3Text = playerDialgoue[background][2][dialogue];

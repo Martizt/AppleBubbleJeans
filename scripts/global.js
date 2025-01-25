@@ -29,7 +29,7 @@ let textBoxIMG = new Image();
 textBoxIMG.src = "assets/art/menu/textBox.png";
 
 let backgroundIMG = new Image ();
-backgroundIMG.src = "assets/art/locations/background1.png";
+backgroundIMG.src = "assets/art/locations/kitchen.png";
 let bubbleIMG = new Image ();
 bubbleIMG.src = "assets/art/bubbles/bubble1.png";
 
@@ -44,6 +44,7 @@ let background = 0;
 
 let dialogue = 0;
 let dialogueText = bubbleEntryDialogue[0][0];
+let responseNPCText = bubbleResponseDialogue[0][0][0];
 let response1Text = playerDialgoue[0][0][0];
 let response2Text = playerDialgoue[0][1][0];
 let response3Text = playerDialgoue[0][2][0];
@@ -90,6 +91,7 @@ function answerBox1()
         console.log("button 1 clicked");
         dialogue++;
         affection += -1;
+        conversationStatus = 1;
         textChange();
     }
 }
@@ -102,6 +104,7 @@ function answerBox2()
             console.log("button 2 clicked");
             dialogue++;
             affection += 0.5;
+            conversationStatus = 1;
             textChange();
         }
 }
@@ -114,6 +117,7 @@ function answerBox3()
             console.log("button 3 clicked");
             dialogue++;
             affection += 1;
+            conversationStatus = 1;
             textChange();
         }
 }
@@ -125,6 +129,11 @@ function getMousePosition(event)
 {
     MouseX = event.clientX;
     MouseY = event.clientY;
+    textChange();
+    if (conversationStatus == 1)
+    {
+        conversationStatus = 0;
+    }
     console.log(MouseX,MouseY);
 }
 
@@ -175,4 +184,5 @@ function gameLoop()
     requestAnimationFrame(gameLoop);
 }
 window.requestAnimationFrame(gameLoop);
+canvas.addEventListener("click", textChange());
 

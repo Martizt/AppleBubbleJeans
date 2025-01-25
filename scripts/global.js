@@ -41,10 +41,10 @@ let mapOpen = 0;
 let background = 0;
 
 let dialogue = 0;
-let dialogueText = " ";
-let response1Text = "Response 1";
-let response2Text = "Response 2";
-let response3Text = "Response 3";
+let dialogueText = bubbleEntryDialogue[0][0];
+let response1Text = playerDialgoue[0][0][0];
+let response2Text = playerDialgoue[0][1][0];
+let response3Text = playerDialgoue[0][2][0];
 let buttonPressed = -1;
 
 let conversationStatus = 0;

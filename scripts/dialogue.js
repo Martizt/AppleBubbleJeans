@@ -27,3 +27,46 @@ function dialogueBubble1()
         break;
     }
 }
+
+
+
+
+function loadDialogue()
+{
+
+    switch( background)
+    {
+
+    }
+}
+
+
+
+
+let entrydialgioue = 
+[
+    "", 
+    "", 
+    "", 
+    "", 
+    ""
+]
+
+
+let midDialgioue = 
+[
+    "", 
+    "", 
+    "", 
+    "", 
+    ""
+]
+
+let exitdialgioue = 
+[
+    "", 
+    "", 
+    "", 
+    "", 
+    ""
+]

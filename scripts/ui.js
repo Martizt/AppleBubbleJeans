@@ -6,15 +6,20 @@ console.log("UI.js script loaded");
 function UITextBox() 
 {
     if (canvas.getContext) {
-      ctx.drawImage(textBoxIMG, 60, 700, 1800, 230);
+      ctx.drawImage(textBoxIMG, 60, 750, 1800, 180);
       ctx.drawImage(textBoxIMG, 80, 950, 550, 100);
       ctx.drawImage(textBoxIMG, 680, 950, 550, 100);
       ctx.drawImage(textBoxIMG, 1280, 950, 550, 100);
-      ctx.font = "50px Arial";
-      ctx.fillText(dialogueText, 70, 750, 1800, 230);
-      ctx.fillText(response1Text, 90, 1000);
-      ctx.fillText(response2Text, 690, 1000);
-      ctx.fillText(response3Text, 1290, 1000);
+      
+      ctx.font = "40px Arial";
+
+      ctx.fillText(dialogueText, 70, 800, 1790);
+
+      ctx.font = "30px Arial";
+
+      ctx.fillText(response1Text, 90, 1000, 540);
+      ctx.fillText(response2Text, 690, 1000, 540);
+      ctx.fillText(response3Text, 1290, 1000, 540);
     }
 }
 

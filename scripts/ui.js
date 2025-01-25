@@ -12,10 +12,12 @@ function UITextBox()
       ctx.drawImage(textBoxIMG, 1280, 950, 550, 100);
       
       ctx.font = "40px Arial";
+      ctx.fillStyle = "black";
 
       ctx.fillText(dialogueText, 70, 800, 1790);
 
       ctx.font = "30px Arial";
+      ctx.fillStyle = "black";
 
       ctx.fillText(response1Text, 90, 1000, 540);
       ctx.fillText(response2Text, 690, 1000, 540);
@@ -28,6 +30,14 @@ function UIMenuBox()
 {
     if (canvas.getContext) {
       ctx.drawImage(mapIconIMG, 1800, 25, 100, 100);
+      ctx.drawImage(bubbleMeter, 25, 25, 100, 100);
+      ctx.fillStyle = "black";
+      ctx.fillRect(150,25,520,100);
+      ctx.fillStyle = "cyan";
+      ctx.fillRect(160,30,(50 * affection),90);
+      ctx.fillStyle = "blue";
+      ctx.font = "60px Arial";
+      ctx.fillText("Suddy Meter", 160, 100);
     }
 }
 

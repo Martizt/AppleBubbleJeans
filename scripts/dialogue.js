@@ -1,27 +1,5 @@
 console.log("Dialogue.js script loaded");
 //All things dialogue related go here, we'll see how that goes.
-function increaseDialogue()
-{
-    dialogue = dialogue + 1;
-}
-
-function dialogueBubble1()
-{
-  switch( background)
-  {
-    case 1:
-        break;
-    case 2:
-        break;
-    case 3:
-        break;
-    case 4:
-        break;
-    case 5:
-        break; 
-  }
-}
-
 
 
 let bubbleEntryDialogue = [
@@ -363,14 +341,14 @@ let bubbleResponseDialogue =[
 
 function textChange()
 {
-    if( conversationStatus == 0)
+    if(conversationStatus == 0)
     {
         dialogueText = bubbleEntryDialogue[background][dialogue];
-        conversationStatus++;
+        conversationStatus = 1;
     }
     else
     {
-        dialogueText = bubbleResponseDialogue[background][dialogue][buttonPressed];
+        dialogueText = bubbleResponseDialogue[background][buttonPressed][dialogue];
         conversationStatus = 0;
     }
 

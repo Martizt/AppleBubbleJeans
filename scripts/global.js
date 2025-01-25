@@ -21,6 +21,8 @@ canvas.addEventListener("click", getMousePosition);
 //image variables so a lot
 let mapIMG = new Image();
 mapIMG.src = "assets/art/menu/map.png";
+let bubbleMeter = new Image();
+bubbleMeter.src = "assets/art/menu/bubblemeter.png";
 let mapIconIMG = new Image();
 mapIconIMG.src = "assets/art/menu/mapIcon.png";
 let textBoxIMG = new Image();
@@ -46,6 +48,8 @@ let response1Text = playerDialgoue[0][0][0];
 let response2Text = playerDialgoue[0][1][0];
 let response3Text = playerDialgoue[0][2][0];
 let buttonPressed = -1;
+
+let affection = 5;
 
 let conversationStatus = 0;
 
@@ -85,6 +89,7 @@ function answerBox1()
         buttonPressed = 0;
         console.log("button 1 clicked");
         dialogue++;
+        affection += -1;
         textChange();
     }
 }
@@ -96,6 +101,7 @@ function answerBox2()
             buttonPressed = 1;
             console.log("button 2 clicked");
             dialogue++;
+            affection += 0.5;
             textChange();
         }
 }
@@ -107,7 +113,7 @@ function answerBox3()
             buttonPressed = 2;
             console.log("button 3 clicked");
             dialogue++;
-            current
+            affection += 1;
             textChange();
         }
 }
@@ -128,7 +134,6 @@ function getMousePosition(event)
 
 
 
-
 ////-----BIG GAME FUNCTIONS-----////
 //These functions should be last, as they call upon previous snippets of code, make sure to put new functions in update() otherwise it wont work!
 
@@ -136,7 +141,7 @@ function getMousePosition(event)
 function draw()
 {
     ctx.drawImage(backgroundIMG,0,0,1920, 1080);
-    ctx.drawImage(bubbleIMG, 0, 0, 500,500);
+    ctx.drawImage(bubbleIMG, 600, 200, 600,900);
 
     //draws the map ON TOP when it should be draw, refer to the functions openMap, closeMap
     if (mapOpen == 1)
@@ -154,8 +159,6 @@ function update()
     displayBubble();
     openMap();
     closeMap();
-    ///testingDialogue();
-    dialogueBubble1();
     answerBox1();
     answerBox2();
     answerBox3();

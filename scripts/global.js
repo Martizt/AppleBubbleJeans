@@ -38,9 +38,9 @@ let MouseY = 0;
 // 0 for close, 1 for open (I DONT DO BOOLEONS OKAY?)
 let mapOpen = 0;
 //this is for changing locations, as player moves this value changes dont worry about it :P
-let background = 1;
+let background = 0;
 
-let dialogue = 1;
+let dialogue = 0;
 let dialogueText = " ";
 
 
@@ -113,6 +113,7 @@ function update()
     openMap();
     closeMap();
     dialogueBubble1();
+    getEntryDiaglogue();
 }
 
 //should be called LAST

@@ -24,7 +24,10 @@ function dialogueBubble1()
   }
 }
 
-
+function testingDialogue()
+{
+    dialogueText = bubbleEntryDialogue[background][dialogue];
+}
 
 
 function loadDialogue()
@@ -72,7 +75,7 @@ let  bubbleEntryDialogue = [
 
 function getEntryDiaglogue()
 {
-    console.log( bubbleEntryDialogue[background][dialogue]);
+    //console.log( bubbleEntryDialogue[background][dialogue]);
     return bubbleEntryDialogue[background][dialogue];
 }
 

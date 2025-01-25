@@ -11,7 +11,7 @@ function UITextBox()
       ctx.drawImage(textBoxIMG, 680, 950, 550, 100);
       ctx.drawImage(textBoxIMG, 1280, 950, 550, 100);
       ctx.font = "50px Arial";
-      ctx.fillText(dialogueText, 70, 750);
+      ctx.fillText(dialogueText, 70, 750, 1800, 230);
       ctx.fillText(response1Text, 90, 1000);
       ctx.fillText(response2Text, 690, 1000);
       ctx.fillText(response3Text, 1290, 1000);

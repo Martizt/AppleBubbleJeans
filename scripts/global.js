@@ -147,6 +147,7 @@ function update()
     displayBubble();
     openMap();
     closeMap();
+    testingDialogue();
     dialogueBubble1();
     getEntryDiaglogue();
     answerBox1();

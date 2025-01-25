@@ -9,21 +9,40 @@ function changeLocation()
 {
     if(mapOpen == 1)
     {
-        if(MouseX >= 400 && MouseX <= 1600 && MouseY >= 150 && MouseY <= 750)
+        //kitchen
+        if(MouseX >= 480 && MouseX <= 800 && MouseY >= 560 && MouseY <= 700)
         {
-            switch(background)
-            {
-                case 0:
-                    backgroundIMG.src = "assets/art/locations/background2.png";
-                    background = 1;
-                    mapOpen = 0;
-                break;
-                case 1: 
-                    backgroundIMG.src = "assets/art/locations/background1.png";
-                    background = 0;
-                    mapOpen = 0;
-                break;
-            }
+            backgroundIMG.src = "assets/art/locations/kitchen.png";
+            background = 0;
+            mapOpen = 0;
+        }
+        //garage
+        if(MouseX >= 820 && MouseX <= 1250 && MouseY >= 560 && MouseY <= 700)
+        {
+            backgroundIMG.src = "assets/art/locations/garage.png";
+            background = 1;
+            mapOpen = 0;
+        }
+        //bedroom
+        if(MouseX >= 475 && MouseX <= 800 && MouseY >= 400 && MouseY <= 540)
+        {
+            backgroundIMG.src = "assets/art/locations/bedroom.png";
+            background = 2;
+            mapOpen = 0;
+        }
+        //office
+        if(MouseX >= 815 && MouseX <= 1250 && MouseY >= 400 && MouseY <= 540)
+        {
+            backgroundIMG.src = "assets/art/locations/office.png";
+            background = 3;
+            mapOpen = 0;
+        }
+        //attic
+        if(MouseX >= 475 && MouseX <= 800 && MouseY >= 270 && MouseY <= 390)
+        {
+            backgroundIMG.src = "assets/art/locations/attic.png";
+            background = 4;
+            mapOpen = 0;
         }
     }
 }

@@ -9,3 +9,7 @@ function introMoment()
         scene = 1;
     }
 }
+
+// make end scenes for the game below, so check attraction, and based on that give ending
+//also add a date button once all dialogue is expended
+//also finally add names above text boxes to characters

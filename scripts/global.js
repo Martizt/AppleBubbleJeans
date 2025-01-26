@@ -88,7 +88,7 @@ let scene = 0;
 //it checks if click is within bounds, flips homemade bool, and resets mouse so its not in a cycle, trust me it works.
 function openMap()
 {
-    if (MouseX >= 1800 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 0)
+    if (MouseX >= 1750 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 0)
     {
         mapOpen = 1;
         MouseX = 0;
@@ -100,7 +100,7 @@ function openMap()
 // same as open but in reverse :O
 function closeMap()
 {
-    if (MouseX >= 1800 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 1)
+    if (MouseX >= 1750 && MouseX <= 1900 && MouseY >= 25 && MouseY <= 125 && mapOpen == 1)
     {
         mapOpen = 0;
         MouseX = 0;

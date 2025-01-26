@@ -35,6 +35,9 @@ backgroundIMG.src = "assets/art/locations/kitchen.png";
 let bubbleIMG = new Image ();
 bubbleIMG.src = "assets/art/bubbles/bubble1.png";
 
+let endingIMG = new Image();
+endingIMG.src = "assets/art/player/neutralending.png";
+
 //mouse position coords, needed to open and close map, and then click to locations
 let MouseX = 0;
 let MouseY = 0;
@@ -51,6 +54,7 @@ let responseNPCText = bubbleResponseDialogue[0][0][0];
 let response1Text = playerDialgoue[0][0][0];
 let response2Text = playerDialgoue[0][1][0];
 let response3Text = playerDialgoue[0][2][0];
+let nameText = " ";
 let finisherText = " ";
 let buttonPressed = -1;
 
@@ -104,7 +108,7 @@ function closeMap()
 //ctx.drawImage(textBoxIMG, 1280, 950, 550, 100);
 function answerBox1()
 {
-    if (MouseX >= 80 && MouseX <= 630 && MouseY >= 950 && MouseY <= 1050)
+    if (MouseX >= 80 && MouseX <= 630 && MouseY >= 950 && MouseY <= 1050 && dialogue <=4)
     {
         MouseX = 0;
         buttonPressed = 0;
@@ -113,7 +117,7 @@ function answerBox1()
         if (background == 0)
         {
             bubble1talk++;
-            bubble2affection--;
+            bubble1affection--;
         }
         if (background == 1)
         {
@@ -139,7 +143,7 @@ function answerBox1()
 }
 function answerBox2()
 {
-    if (MouseX >= 680 && MouseX <= 1230 && MouseY >= 950 && MouseY <= 1050)
+    if (MouseX >= 680 && MouseX <= 1230 && MouseY >= 950 && MouseY <= 1050 && dialogue <=4)
         {
             MouseX = 0;
             buttonPressed = 1;
@@ -174,7 +178,7 @@ function answerBox2()
 }
 function answerBox3()
 {
-    if (MouseX >= 1280 && MouseX <= 1830 && MouseY >= 950 && MouseY <= 1050)
+    if (MouseX >= 1280 && MouseX <= 1830 && MouseY >= 950 && MouseY <= 1050 && dialogue <=4)
         {
             MouseX = 0;
             buttonPressed = 2;
@@ -208,6 +212,14 @@ function answerBox3()
         }
 }
 
+function dateButton()
+{
+    if (MouseX >= 1600 && MouseX <= 1850 && MouseY >= 660 && MouseY <= 740 && dialogue == 5)
+    {
+        scene = 2;
+        MouseX = 0;
+    }
+}
 
 // MOUSE FUNCTION
 //it gets mouse position necessary for opening map, changing location etc.
@@ -235,8 +247,11 @@ function getMousePosition(event)
 //draws any nessecary sprites, or whatever
 function draw()
 {
-    ctx.drawImage(backgroundIMG,0,0,1920, 1080);
-    ctx.drawImage(bubbleIMG, 600, 200, 600,900);
+    if (scene == 1)
+    {
+        ctx.drawImage(backgroundIMG,0,0,1920, 1080);
+        ctx.drawImage(bubbleIMG, 450, 100, 900,1200);
+    }
 
     //draws the map ON TOP when it should be draw, refer to the functions openMap, closeMap
     if (mapOpen == 1)
@@ -264,6 +279,13 @@ function update()
         answerBox2();
         answerBox3();
         finishText();
+        dateButton();
+    }
+    if (scene == 2)
+    {
+        ctx.drawImage(endingIMG,0,0,1920, 1080);
+        ctx.drawImage(bubbleIMG, 150, 50, 800,1100);
+        endingMoment();
     }
 }
 

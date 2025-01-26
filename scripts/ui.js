@@ -45,7 +45,7 @@ function UITextBox()
       }
       else
       {
-          ctx.drawImage(textBoxIMG, -30, 750, 2000, 180);
+          ctx.drawImage(textBoxIMG, -30, 750, 2000, 310);
           ctx.font = "40px Arial";
           ctx.fillStyle = "black";
 

@@ -16,15 +16,15 @@ function endingMoment()
 {
     if (affection <= 3)
     {
-        endingIMG.src = "assets/art/player/badending.png"
+        endingIMG.src = "assets/art/endings/bad.png"
     }
     if (affection <= 9 && affection > 3)
     {
-        endingIMG.src = "assets/art/player/neutralending.png"
+        endingIMG.src = "assets/art/endings/neutral.png"
     }
     if (affection > 9)
     {
-        endingIMG.src = "assets/art/player/goodending.png"
+        endingIMG.src = "assets/art/endings/good.png"
     }
 }
 //also add a date button once all dialogue is expended

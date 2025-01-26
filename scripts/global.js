@@ -36,7 +36,7 @@ let bubbleIMG = new Image ();
 bubbleIMG.src = "assets/art/bubbles/bubble1.png";
 
 let endingIMG = new Image();
-endingIMG.src = "assets/art/player/neutralending.png";
+endingIMG.src = "assets/art/endings/neutral.png";
 
 //mouse position coords, needed to open and close map, and then click to locations
 let MouseX = 0;

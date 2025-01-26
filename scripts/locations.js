@@ -15,6 +15,7 @@ function changeLocation()
             backgroundIMG.src = "assets/art/locations/kitchen.png";
             background = 0;
             mapOpen = 0;
+            textChange();
         }
         //garage
         if(MouseX >= 820 && MouseX <= 1250 && MouseY >= 560 && MouseY <= 700)
@@ -22,6 +23,7 @@ function changeLocation()
             backgroundIMG.src = "assets/art/locations/garage.png";
             background = 1;
             mapOpen = 0;
+            textChange();
         }
         //bedroom
         if(MouseX >= 475 && MouseX <= 800 && MouseY >= 400 && MouseY <= 540)
@@ -29,6 +31,7 @@ function changeLocation()
             backgroundIMG.src = "assets/art/locations/bedroom.png";
             background = 2;
             mapOpen = 0;
+            textChange();
         }
         //office
         if(MouseX >= 815 && MouseX <= 1250 && MouseY >= 400 && MouseY <= 540)
@@ -36,6 +39,7 @@ function changeLocation()
             backgroundIMG.src = "assets/art/locations/office.png";
             background = 3;
             mapOpen = 0;
+            textChange();
         }
         //attic
         if(MouseX >= 475 && MouseX <= 800 && MouseY >= 270 && MouseY <= 390)
@@ -43,6 +47,7 @@ function changeLocation()
             backgroundIMG.src = "assets/art/locations/attic.png";
             background = 4;
             mapOpen = 0;
+            textChange();
         }
     }
 }

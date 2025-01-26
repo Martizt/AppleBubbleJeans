@@ -105,6 +105,7 @@ function closeMap()
         mapOpen = 0;
         MouseX = 0;
         console.log("map closed");
+        textChange();
     }
 }
 //ctx.drawImage(textBoxIMG, 80, 950, 550, 100);

@@ -64,7 +64,7 @@ function UITextBox()
 function UIMenuBox()
 {
     if (canvas.getContext) {
-      ctx.drawImage(mapIconIMG, 1800, 25, 100, 100);
+      ctx.drawImage(mapIconIMG, 1750, 15, 150, 150);
       ctx.drawImage(bubbleMeter, 25, 25, 100, 100);
       ctx.fillStyle = "black";
       ctx.fillRect(150,25,520,100);

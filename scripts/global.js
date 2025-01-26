@@ -38,6 +38,10 @@ bubbleIMG.src = "assets/art/bubbles/bubble1.png";
 let endingIMG = new Image();
 endingIMG.src = "assets/art/endings/neutral.png";
 
+
+let music = new Audio();
+music.src = "assets/audio/music.wav"
+
 //mouse position coords, needed to open and close map, and then click to locations
 let MouseX = 0;
 let MouseY = 0;
@@ -287,6 +291,8 @@ function update()
         ctx.drawImage(bubbleIMG, 150, 50, 800,1100);
         endingMoment();
     }
+
+    music.play();
 }
 
 //should be called LAST
